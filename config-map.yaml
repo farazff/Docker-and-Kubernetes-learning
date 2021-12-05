@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: flask-config
+data:
+  config.json: |
+    {
+      "host": "http://worldtimeapi.org/api/timezone/Asia/Tehran.txt",
+      "port": 8080
+    }
