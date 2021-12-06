@@ -3,6 +3,7 @@ import os
 from flask import Flask
 import requests
 import json
+import socket
 
 app = Flask(__name__)
 
@@ -11,7 +12,8 @@ app = Flask(__name__)
 def hello_world():
     url = data['host']
     resp = requests.get(url)
-    out = {'hostname': 'Faraz_ASUS', 'time': str(resp.content)}
+    host_name = socket.gethostname()
+    out = {'hostname': host_name, 'time': str(resp.content)}
     json_dump = json.dumps(out)
     return json_dump
 
